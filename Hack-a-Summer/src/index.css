@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/bg1.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.header p, a{
+    margin-top: 1px;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{
+    height: 80px;
+    width: auto;
+}
+
+.links{
+    flex: 1;
+    text-align: right;
+}
+
+.links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 5px 12px;
+    position: relative;
+}
+
+.links ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 13px;           
+}
+
+.links ul li:after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f7c873;
+    display: block;
+    margin: auto;
+}
+
+.links ul li:hover::after{
+    width: 100%;
+    transition: .5s;
+}
+
+.text{
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.title{
+    color: #f7c873;
+    font-style: italic;
+}
+
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.hero-btn:hover{
+    border: 1px solid #f7c873;
+    background-color: #f7c873;
+}
+
+.Card {
+    min-width: 40%;
+    border: 2px solid black;
+    border-radius: 6px;
+    margin: 10px;
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 20vh;
+    position: relative;
+    color: white;
+    text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+    transition: transform .7s, box-shadow .7s;
+}
+
+.Card:hover{
+    transform: translateY(-6px);
+    box-shadow: 5px 5px 5px black;
+}
+.Main {
+    display: flex;
+    justify-content: center;
+}
+
+.Main2{
+    display: flex;
+    justify-content: center;
+}
+
+.Card .td{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.Card h1 {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.Card p{
+  align-self: flex-start;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+
+.footer{
+    width: 100%;
+    height: 20vh;
+    text-align: center;
+    padding: 30px 0;
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.footer p {
+  font-family: 'Russo One', sans-serif;
+  font-style: italic;
+}
+
+.icons .fa-brands{
+    color: #00FFFF;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+
+.bottom{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    background-color: #121212;
+    color: white;
+}
+
+.text{
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.text h1{
+    font-size: 62px;
+}
+
+.text p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: white;
+}
+
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(4px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; 
+}
+
+.menu-content {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 30px;
+  border-radius: 10px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  width: 100vw;
+  height: 80vh;
+  border: 2px solid white;
+  border-collapse: collapse;
+  gap: 0;
+}
+
+.grid-row {
+  display: contents; /* per far funzionare il grid senza spazi */
+}
+
+.grid-button {
+  font-size: 1.8rem;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border: 1px solid white;
+  background-color: #3498db;
+  color: white;
+  box-sizing: border-box;
+  border-radius: 0; /* niente angoli arrotondati */
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.grid-button:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.grid-button:disabled {
+  background-color: #95a5a6;
+  cursor: default;
+  color: #ddd;
+}
+
+.answered {
+  background-color: #2c3e50 !important;
+  color: #7f8c8d !important;
+  cursor: default;
+}
+
+.score-display {
+  margin-top: 15px;
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 1000;
+}
+
+.popup {
+  background-color: #222;
+  padding: 25px 30px;
+  border-radius: 8px;
+  min-width: 320px;
+  max-width: 90vw;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.options-grid-popup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.option-popup {
+  padding: 10px 15px;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.option-popup.selected {
+  background-color: #2980b9;
+  color: white;
+  border-color: #2980b9;
+}
+
+.submit-btn {
+  margin-top: 10px;
+  background-color: #27ae60;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:disabled {
+  background-color: #7f8c8d;
+  cursor: default;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: #2ecc71;
+
+}
+
+.close-btn {
+  margin-top: 10px;
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: #c0392b;
+}
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 1000;
+}
+
+.popup {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 300px;
+  max-width: 90%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+
+.close-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: #c0392b;
+}
+
+.score-display{
+  color: black;
+}
