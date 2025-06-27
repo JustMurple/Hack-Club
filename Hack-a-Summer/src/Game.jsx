@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const questionBanks = {
   Flags: [
@@ -425,6 +426,7 @@ export default function Game() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [answeredButtons, setAnsweredButtons] = useState({});
+  const navigate = useNavigate();
 
   const questionIndex = (selectedButton?.row ?? 0) * rowValues.length + (selectedButton?.col ?? 0);
   const question = questions[questionIndex % questions.length];
@@ -469,6 +471,9 @@ export default function Game() {
 
   return (
     <>
+      <button className="back-button" onClick={() => navigate("/")}>
+       ← Back
+      </button>
       <div className="game-grid">
         {Array.from({ length: rowsCount }).map((_, row) => (
           <div className="grid-row" key={row}>
@@ -489,7 +494,7 @@ export default function Game() {
         ))}
       </div>
 
-      <div className="score-display">Score: {score}</div>
+      <div className="score-display"><p className="score">Score: {score}</p></div>
 
       {showPopup && (
         <div className="overlay" onClick={handleClosePopup}>
