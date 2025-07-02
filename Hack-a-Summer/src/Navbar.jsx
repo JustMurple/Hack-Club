@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 function Navbar(props){
 
     return(
@@ -11,7 +11,7 @@ function Navbar(props){
           <ul>
             <li><a href="">ABOUT US</a></li>
             <li><a href="">SIGN UP</a></li>
-            <li><a href="">LOG IN</a></li>
+            <li><Link to="/Login">LOG IN</Link></li>
           </ul>
         </div>
       </nav>
